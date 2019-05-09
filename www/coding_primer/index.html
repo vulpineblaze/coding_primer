@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+
+<h1>Coding Primer</h1>
+
+<P><i>
+	Just a 30 minute lecture that sums up my entire education...  Put in an hour and you'll basically be hirable as an intern-programmer. 
+</i></P>
+ 
+<h2>Style Guide:</h2>
+
+<table>
+	<tr>
+		<td><B>Bold</B></td>
+		<td>
+			Keyword or term that is required to know 
+		</td>
+	</tr>
+	<tr>
+		<td><I>Italics</I></td>
+		<td>
+			Idea or design pattern that is important, but isn't a keyword
+		</td>
+	</tr>
+	<tr>
+		<td><span class="hlgt">Highlighted</span></td>
+		<td>
+			 We should stop on these points and type some code
+		</td>
+	</tr>
+</table>
+ 
+<P>Itinerary: (20-30 minutes?)</P>
+
+<div class="group">
+	<li>2 basic things: <B>Variables</B> (nouns) and <B>Functions</B>(verbs).</li>
+	<ul>
+		<li>   Python gives you a 'free' function, the *.py file, aka "<I>main</I>"</li>
+		<li>   Variables have unmixable kinds, called <B>Data Types</B></li>
+		<ul>
+			<li>Primitive Data types:</li>
+			<li><B>Integer</B> (-1, 0, 1, 2, 3, ..)</li>
+			<li><B>Float</B> (-1.053463, 235468.9, etc..)</li>
+			<li><B>Character</B> ('a', '7','$',' ','\n', 'EOF' )</li>
+			<li><B>String</B> ("Hello World!", "Hello"+" "+input+"!",char[] {'H','e','l','l','o'} )</li>
+				<ul><li>Short for a <I>string of characters</I></li></ul>
+			<li><B>Boolean</B> (0 or 1 , true or false, truthy and falsy)</li>
+			<ul>
+				<li>This one comes with a ton of mathemagical ideas like <I>Digital Logic</I> and <I>Boolean Algebra</I> and shit. </li>
+				<li>It's like the Unit Circle or your times tables. You might be tempted to drill & memorize the concept, and that's fine.</li>
+				<li>Or just solve real problems and you'll memorize it without any additional work. So we can skim it for now. </li>
+			</ul>
+			<li>Any many more! </li>
+			<ul>
+				<li>Every language comes with a bunch of its own, and treats even these five slightly differently than ever other language. </li>
+				<li>So we won't cover how exactly Python does things, because everything that's not Python will do them kinda different. </li>
+				<li>I literally just saved you two semesters of compsci right here...</li>
+			</ul>
+		</ul>
+		<li><span class="hlgt">print "Hello World!"</span> </li>
+		<ul>
+			<li>Python comes with functions built in!</li>
+			<li>This one sends that string to "<I>the console</I>"</li>
+			<li>"Hello World!" is the <B>argument</B> this function takes in</li>
+			<ul>
+				<li>Pass-by-ref, pass-by-value:</li>
+				<ul>
+					<li>If I send a copy and it doesn't affect my variable outside the function, its pass by value</li>
+					<li>If the function alters my variable and those changes are seen outside the function, is pass by reference</li>
+					<li>The verbiage is from old coding. Just keep swimming.</li>
+				</ul>
+			</ul>
+			<li>Make your own!</li>
+			<ul>
+				<li>Python makea it super easy, def functionName()</li>
+				<li>Everything is read <I><U>from top to bottom, sequentially</U></I></li>
+					<ul><li><B>Parallel</B> and <B>asynchronous</B> programming violates this rule, so we won't cover them.</li></ul>
+				<li>Tons of BS left out, like <B>prototyping</B> , Python knows better</li>
+				<li>Tons of BS not advised, like <B>overloading</B>, since it's harder (or impossible) to debug in Python</li>
+				<li>All the fine details are wildly different between languages, so we won't cover them. Again, another whole course or two of material skipped.</li>
+			</ul>
+			<li><B>Return</B></li>
+			<ul>
+				<li>At the end of a function, you can send data back, also by copy.</li>
+				<li><span class="hlgt">Output = myFunction(Input)</span></li>
+			</ul>
+		</ul>
+		<li><span class="hlgt">X=4;Y=5; print X+Y</span></li>
+		<ul>
+			<li>"duck typing", Python doesn't need to be told what your type is, it'll try to guess for you</li>
+			<li>Some weird shit can happen though, so keep in mind, especially with truthy, not defined, NAN, etc...</li>
+			<li>We are skipping a huge discussion between <I>static</I> and <I>dynamic typing</I>, and the finer points of how each language handles this crap takes whole chapters of reference books that the professor doesn't have time to cover in normal courses.</li>
+		</ul>
+		<li><B>Casting:</B></li>
+		<ul>
+			<li>Forces the type of a variable. Also can be used to convert one variable type to another, if Python knows how***..</li>
+			<li>I have <span class="hlgt">an integer and a float I wanna multiply together</span>. I do not know how Python will handle this. </li>
+			<ul>
+				<li>Output is float? Int? <B>Double</B>?</li>
+				<li>I can Cast  the int to a float. This should produce a float as the output (float * float = float)</li>
+				<li>I can Cast the output to be an int, and this will <I>round</I> or <I>truncate</I> the decimal places</li>
+			</ul>
+			<li>I have two strings with numbers in them that I want to multiply</li>
+			<ul>
+				<li>This happens a lot. Way more than often.</li>
+				<li>String.ToInt() ? String.ToFloat() ? </li>
+				<li>Maybe <span class="hlgt">just do the operation</span> and see what Python thinks?</li>
+				<ul>
+					<li>String1 * String2 will output <I>something</I>. I do not know what though...</li>
+					<li>If String1 = "2.7" and String2 = "3.14", your output will probably be a float. Probably.</li>
+				</ul>
+			</ul>
+			<li>*** if Python knows how:</li>
+			<ul>
+				<li>Basically each language handles this differently, so we are skipping it.</li>
+				<li>At this point, I don't even bother remembering this. I'll check my specific code when I must know.</li>
+			</ul>
+		</ul>
+	</ul>
+</div>
+<div class="group">
+	<li><I>Flow Control</I></li>
+	<ul>
+		<li><B>If, Then, Else If, Switch</B></li>
+		<ul>
+			<li>Basically check my variable for some <I>condition</I>, and then run some code, or some other code, or default code, or no code.</li>
+			<li>Way too much time is wasted on this in early classes.</li>
+			<li><span class="hlgt">If(x>y) then x+y else x-y</span></li>
+			<li><span class="hlgt">Switch(X) case 1: 2: 3: default:</span></li>
+		</ul>
+		<li><B>Loops</B></li>
+		<ul>
+			<li>I want this piece of code to run more than once.</li>
+			<li>Starting, continuing, and endings are controlled by some <I>condition</I>.</li>
+			<li>It's like If, except you say "do again" instead of "do this other thing"</li>
+			<li>This is typically taught so fucking wonky that even I almost failed a class over it.</li>
+			<li><span class="hlgt">For(i=0,i>10,i++) print "I have looped "+i+" times!"</span></li>
+		</ul>
+		<li>This is why we needs functions, and they can help determine: whether or not a function runs, or be a huge part of a function.</li>
+		<ul>
+			<span class="hlgt">
+				<li>If() func1 else func2</li>
+				<li>If() _ton_of_code_ else _a_ton_more_code_</li>
+				<li>If()else if()else if()else if()else if()else</li>
+				<li>Switch case#: case#: case#: case#: case#: case#: case#: case#: case#: case#: default:</li>
+				<li>isCondition()</li>
+			</span>
+		</ul>
+		<li>Not bolding was on purpose. I didn't hear 'flow control' until like my 5th year in school...  </li>
+	</ul>
+</div>
+<div class="group">
+	<li>Tons of cool shit so far, but what makes a program more than some gimmick?</li>
+	<ul>
+		<li>Objects!</li>
+		<ul>
+			<li>This glosses over like 45-80 years of compsci and lands on a very new (late 90s) answer.</li>
+			<li>But any coding a first-year will do is at this level, so we can safely gloss.</li>
+		</ul>
+	</ul>
+</div>
+<div class="group">
+	<li><B>Objects</B> and Data Structures</li>
+	<ul>
+		<li>Can put this stuff together to get far more complex items, universal term is objects.</li>
+		<ul>
+			<li>Array, Struct, Class, Tuple, List, Dictionary, Linked List, Hash Table, etc..</li>
+			<li><I>Object Oriented Programming</I></li>
+			<ul>
+				<li>Everything is an object, even <I>main</I>. Everything is an object, even Integers. The console is an object. The mouse is an object. Yo dawg...</li>
+			</ul>
+			<li><I>Functional Programming</I></li>
+			<ul>
+				<li>Main is a function. All functions are self-contained, modular, etc..</li>
+				<li>InputData -> Function -> OutputData ; nothing else. Pass-by-ref is wrong. </li>
+				<li>If two inputs are the same, it MUST produce same output both times.</li>
+			</ul>
+			<li>Sanity – something in between ...</li>
+		</ul>
+		<li><B>Array:</B></li>
+		<ul>
+			<li>Take a bunch of variables and put them in a line</li>
+			<li>Find your <B>element</B> with an <B>index</B>. <span class="hlgt">(Eg array[] = {1,3,5,7,9}; print array[2] >>> "5")</span></li>
+			<ul>
+				<li>What? Why not "3"? </li>
+				<li>First index is <I>index zero</I>. It's a compsci thing.. Press "I Believe" button and keep moving</li>
+			</ul>
+			<li>Multidimensional</li>
+			<ul>
+				<li>Array[][] : This is an excel sheet. First array in column, second is row.</li>
+				<li>Array[][][] : this is a pixel. X, Y, and color.</li>
+				<li>Array[][][][] : this is a voxel. X, Y, Z, block type. Yup, minecraft.</li>
+			</ul>
+		</ul>
+		<li><B>Tuple:</B></li>
+		<ul>
+			<li>These are weird and I don't like them. They are like arrays but weird.</li>
+			<li>Tuple = ((0 ,1 ,2 ),(3,4),(1,2,3,4,5,6,(1,2))) </li>
+			<li>I don't use them and actively avoid them because I don't know why you would use one over arrays or lists. </li>
+			<li>They do exist, and other people use them, and so you'll need to know how to get around them at least.</li>
+			<li>This idea is not exclusive to Tuples, every language has shit in it that is ugly and stupid and wrong, and you will get stuck using it. That's why I discuss Tuples.</li>
+		</ul>
+		<li><B>List:</B></li>
+		<ul>
+			<li>Way better than tuple. Now you don't need to match datatypes and have a ton more functionality</li>
+			<ul>
+				<li>Learning to compare data structures is far better than learning everything about every data structure. </li>
+			</ul>
+			<li>Append, Insert, Delete</li>
+			<ul>
+				<li>Basically you don't have to worry about indexing like an array anymore</li>
+			</ul>
+			<li><I><span class="hlgt">Foreach</span></I></li>
+			<ul>
+				<li>Just run thru all of the elements. No fuss or BS</li>
+				<li>Foreach tuple?</li>
+			</ul>
+			<li>A Minecraft chunk is a list of voxels. A Minecraft world is an array[][] of chunks.</li>
+			<ul>
+				<li>Minecraft is simply a voxel <B>renderer</B>.</li>
+				<li>Run thru my list of voxels, and send them to the display.</li>
+				<li>Append, Insert, and Delete voxels based on players actions</li>
+			</ul>
+		</ul>
+		<li><B>Dictionary:</B></li>
+		<ul>
+			<li>A super-charged List</li>
+			<li><B><span class="hlgt">Key-Value</span></B></li>
+			<ul>
+				<li>No more indexing. If my object is Students, and I want the one named "Jon", I simply go get it</li>
+				<li>Student = Students.get(first="Jon");</li>
+				<ul>
+					<li>First is the key, "Jon" is a value</li>
+				</ul>
+			</ul>
+			<li>Advanced shit</li>
+			<ul>
+				<li>I want all active students' with a GPA higher than 3.0 from India with the first letter of their names being "H"</li>
+				<li>With an array or list, you would have tons of nested loops and it would suck</li>
+				<ul>
+					<li>There's a semesters worth fancy math that boils down to "<I>don't nested loops if you can help it</I>"</li>
+					<li>And then also really don't do it.</li>
+				</ul>
+				<li>Student = Students.get(active=True, gpa>3.0, country="India", first="H*")</li>
+				<ul>
+					<li>Data types! True and 3.0 don't get quotes, they are bool and int</li>
+					<li>India and H* get quotes because they are strings</li>
+				</ul>
+			</ul>
+		</ul>
+		<li><B>Class:</B></li>
+		<ul>
+			<li>Has zero or more variables (Array, List, Dict all count too)</li>
+			<li>Has zero or more functions (to help be clear, we call functions inside a class a <B>Method</B>)</li>
+			<li>"<B>Extends</B>", have one parent, then make specific children.</li>
+			<ul>
+				<li>Save tons of time on cut-n-paste</li>
+				<li>And children get updates from parent w zero additional work</li>
+			</ul>
+			<li>"<B>Instantiates</B>", basically pull this empty bag off the shelf and put real data into it</li>
+			<li>Compare:</li>
+			<ul>
+				<li>Student would be your class. They have properties. (meaning variable, <B>Methods</B> or both.)</li>
+				<li>Students would probably be a list with a bunch of  Student  objects in it. </li>
+				<li>Each element inside Students would be an instantiation of the class Student</li>
+				<li>A single instantiation of Student would have data in it, like :</li>
+				<ul>
+					<li>Student.first = "Jon"</li>
+					<li>Student.gpa=3.0</li>
+					<li>Student.register()</li>
+					<li>Student.addGrade("EEE108","D",3)  </li>
+					<ul>
+						<li>In this example the function takes arguments for the class name, the grade as a string, and the number of units of that class</li>
+					</ul>
+					<li><span class="hlgt">What other properties might Student have?</span></li>
+				</ul>
+			</ul>
+		</ul>
+		<li>Not-Python ones:</li>
+		<ul>
+			<li>JSON</li>
+			<li>ArrayList</li>
+			<li>Java String</li>
+			<li>ORM (Object Relational Model)</li>
+			<li>And many more. Every language and framework will have different ways of organizing variables and/or functions that are really good for what that language is good for. The catch is they don't make any sense until you are trying to do they thing they were designed to be good at, so we won't bother covering any of them. Just know that there are an infinite variety of Objects and Data structures. </li>
+		</ul>
+	</ul>
+</div>
+<div class="group">
+	<li>Final exam: tie it all together</li>
+	<ul>
+		<li>How would you code <S>TERA</S> <I>Any Video Game</I>, from scratch?</li>
+		<li>Well, what does the game have? (Nouns)</li>
+		<ul>
+			<li>Levels</li>
+			<li>Characters / Enemies</li>
+			<li>Inventory, Equipment</li>
+		</ul>
+		<li>What does the game do? (Verbs)</li>
+		<ul>
+			<li>Combat</li>
+			<li>NPC</li>
+			<li>Equipment modifiers</li>
+			<li>Rendering</li>
+			<li>Save / Network</li>
+		</ul>
+		<li>You simply outline all the data types (Nouns) you think you need first</li>
+		<ul>
+			<li>Stats:</li>
+			<ul>
+				<li>Attack</li>
+				<li>Defense</li>
+				<li>Money</li>
+				<li>Health</li>
+			</ul>
+			<li>Equipment</li>
+			<ul>
+				<li>Sword</li>
+				<ul>
+					<li>Attack modifier</li>
+				</ul>
+				<li>Armor</li>
+				<ul>
+					<li>Defense Modifier</li>
+					<li>Health modifier</li>
+				</ul>
+			</ul>
+		</ul>
+		<li>Pop them into classes that make sense (<I>Object Oriented Approach</I>, makes adding new features easy)</li>
+		<ul>
+			<li>Character extends Actor</li>
+			<ul>
+				<li>Do all actors have Health? Weapons? Elite status rewards?</li>
+			</ul>
+			<li>Gael.Beddicker instantiates Character</li>
+			<ul>
+				<li>Means you make a specific one to hold your data</li>
+			</ul>
+			<li>Enemy extends Actor</li>
+			<li>BAM extends Enemy</li>
+			<li>Basilisk extends BAM</li>
+			<li>(That one basilisk you are hitting with your sword until it dies and drops goodies) instantiates Basilisk</li>
+		</ul>
+		<li>Then add <S>Functions</S> Methods (Verbs) that make your classes interact</li>
+		<ul>
+			<li>Character.Attack(basiliskInstance)</li>
+			<li>Equipment.Remove(itemInstance)</li>
+			<li>Enemy.Damage(player)</li>
+			<li>Enemy.Destroy()  // empty paren typically denote this* or self* for classes</li>
+			<li>Enemy.Spawn()</li>
+		</ul>
+		<li>Rinse and repeat to add features until you are   <s>happy with it</s>    <s>give up</s>    done.</li>
+		<li>That's coding in a nutshell. Everything from here is trivia for your specific project/language/framework. </li>
+	</ul>
+</div>
+
+
+<P>
+	Breakdown: 
+</P>
+<p>
+	5+ minutes for data types and functions, 5- for flow control, 10+ to 15- for objects, 5+ for final exam discussion. 
+</p>
+<p>
+	<span class="hlgt">30 minutes for pear-programming </span>
+</p>
+	
+	
+
+</body>
+</html>
